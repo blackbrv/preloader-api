@@ -5,6 +5,11 @@
       "name": "Spinner",
       "value": "spinners",
       "code": "<div class='spinner'></div><style>.spinner{...}</style>"
+    },
+    {
+      "name": "Test Spinner",
+      "value": "test-spinner",
+      "code": "<div>Test</div>"
     }
   ]
 }
