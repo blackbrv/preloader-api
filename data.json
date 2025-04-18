@@ -1,0 +1,10 @@
+{
+  "preloaders": [
+    {
+      "id": 1,
+      "name": "Spinner",
+      "value": "spinners",
+      "code": "<div class='spinner'></div><style>.spinner{...}</style>"
+    }
+  ]
+}
