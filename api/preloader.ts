@@ -9,13 +9,25 @@ export async function GET() {
 }
 
 export async function POST(req: Request) {
-  const newData = await req.json();
-  const file = await fs.readFile(FILE_PATH, "utf-8");
-  const data = JSON.parse(file);
+  try {
+    const newData = await req.json(); // Parse JSON
+    console.log("Received data:", newData); // Log incoming data
 
-  data.push(newData);
-  await fs.writeFile(FILE_PATH, JSON.stringify(data, null, 2));
-  return new Response(JSON.stringify({ message: "Created" }), { status: 201 });
+    const file = await fs.readFile(FILE_PATH, "utf-8");
+    const data = JSON.parse(file);
+
+    data.push(newData);
+    await fs.writeFile(FILE_PATH, JSON.stringify(data, null, 2));
+
+    return new Response(JSON.stringify({ message: "Created" }), {
+      status: 201,
+    });
+  } catch (error) {
+    console.error("POST Error:", error); // Log the actual error
+    return new Response(JSON.stringify({ error: "Internal Server Error" }), {
+      status: 500,
+    });
+  }
 }
 
 export async function PUT(req: Request) {
