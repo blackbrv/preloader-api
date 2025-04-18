@@ -19,5 +19,14 @@
         "code": "<div class=\"dot-loader\"></div><style>.dot-loader { /* styles */ }</style>"
       }
     ]
+  },
+  {
+    "name": "Square Loaders",
+    "value": "square-loaders",
+    "items": [
+      {
+        "code": "<div class=\"square-loader\"></div><style>.dot-loader { /* styles */ }</style>"
+      }
+    ]
   }
 ]
