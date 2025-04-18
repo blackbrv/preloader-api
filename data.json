@@ -1,15 +1,23 @@
-{
-  "preloaders": [
-    {
-      "id": 1,
-      "name": "Spinner",
-      "value": "spinners",
-      "code": "<div class='spinner'></div><style>.spinner{...}</style>"
-    },
-    {
-      "name": "Test Spinner",
-      "value": "test-spinner",
-      "code": "<div>Test</div>"
-    }
-  ]
-}
+[
+  {
+    "name": "Spinner",
+    "value": "spinners",
+    "items": [
+      {
+        "code": "<div class=\"spinner\"></div>\n<style>\n.spinner {\n    width: 56px;\n    height: 56px;\n    border-radius: 50%;\n    border: 9px solid;\n    border-color: #dbdcef;\n    border-right-color: #474bff;\n    animation: spinner-d3wgkg 1s infinite linear;\n}\n@keyframes spinner-d3wgkg {\n    to {\n        transform: rotate(1turn);\n    }\n}\n</style>"
+      },
+      {
+        "code": "<div class=\"new-spinner\"></div><style>.new-spinner { /* styles */ }</style>"
+      }
+    ]
+  },
+  {
+    "name": "Dot Loaders",
+    "value": "dot-loaders",
+    "items": [
+      {
+        "code": "<div class=\"dot-loader\"></div><style>.dot-loader { /* styles */ }</style>"
+      }
+    ]
+  }
+]
