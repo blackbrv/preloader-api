@@ -1,15 +1,22 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite" // For production, change to "postgresql"
   url      = env("DATABASE_URL")
+}
+
+model PreloaderCategory {
+  id    Int             @id @default(autoincrement())
+  name  String
+  value String          @unique
+  items PreloaderItem[]
+}
+
+model PreloaderItem {
+  id         Int               @id @default(autoincrement())
+  code       String
+  category   PreloaderCategory @relation(fields: [categoryId], references: [id])
+  categoryId Int
 }
